@@ -1,15 +1,7 @@
 import React from "react";
 import { LineChart } from "react-native-chart-kit";
-import { Crypto } from "../types/crypto";
 import { Dimensions, StyleSheet, View } from "react-native";
-
-interface CryptoStatsProps {
-  data: {
-    percent_change_1h: Crypto["percent_change_1h"];
-    percent_change_24h: Crypto["percent_change_24h"];
-    percent_change_7d: Crypto["percent_change_7d"];
-  };
-}
+import { CryptoStatsProps } from "../interfaces/CryptoStatsProps";
 
 const CryptoStats: React.FC<CryptoStatsProps> = ({ data }) => {
   const { percent_change_1h, percent_change_24h, percent_change_7d } = data;

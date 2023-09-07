@@ -1,10 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
-
-interface SearchProps {
-  searchTerm: string;
-  setSearchTerm: (text: string) => void;
-}
+import { SearchProps } from "../interfaces/SearchProps";
 
 const Search: React.FC<SearchProps> = ({ searchTerm, setSearchTerm }) => {
   return (

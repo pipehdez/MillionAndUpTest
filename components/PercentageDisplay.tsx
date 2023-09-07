@@ -1,9 +1,6 @@
 import React from "react";
-import { Text, View } from "react-native";
-
-interface PercentageDisplayProps {
-  percent_change: string;
-}
+import { Text } from "react-native";
+import { PercentageDisplayProps } from "../interfaces/PercentageDisplayProps";
 
 const PercentageDisplay: React.FC<PercentageDisplayProps> = ({
   percent_change,

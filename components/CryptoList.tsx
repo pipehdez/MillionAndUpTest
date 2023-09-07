@@ -7,18 +7,10 @@ import {
   StyleSheet,
 } from "react-native";
 import { Crypto } from "../types/crypto";
-import { formatPrice } from "../utils/formatPrice";
-import PercentageDisplay from "./PercentageDisplay";
 import Loading from "./Loading";
+import Item from "./Item";
+import { CryptoListProps } from "../interfaces/CryptoListProps";
 
-interface CryptoListProps {
-  data: Crypto[] | undefined;
-  isLoading: boolean;
-  isError: boolean;
-  error: string | unknown;
-  onEndReached: () => void;
-  navigation: any;
-}
 const CryptoList: React.FC<CryptoListProps> = ({
   data,
   isLoading,
@@ -36,7 +28,7 @@ const CryptoList: React.FC<CryptoListProps> = ({
     return <Text>Error: {error}</Text>;
   }
 
-  const renderItem = (item: Crypto) => {
+  const _renderItem = (item: Crypto) => {
     return (
       <TouchableOpacity
         onPress={() => {
@@ -44,30 +36,7 @@ const CryptoList: React.FC<CryptoListProps> = ({
         }}
         testID="crypto-list-item"
       >
-        <View style={styles.item}>
-          <View
-            style={{
-              alignItems: "flex-start",
-            }}
-          >
-            <Text style={styles.name}>{item.name}</Text>
-            <Text
-              style={{
-                color: "gray",
-              }}
-            >
-              ({item.symbol})
-            </Text>
-          </View>
-          <View
-            style={{
-              alignItems: "flex-end",
-            }}
-          >
-            <Text> {formatPrice(item.price_usd)}</Text>
-            <PercentageDisplay percent_change={item.percent_change_1h} />
-          </View>
-        </View>
+        {Item({item})}
       </TouchableOpacity>
     );
   };
@@ -77,7 +46,7 @@ const CryptoList: React.FC<CryptoListProps> = ({
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => renderItem(item)}
+        renderItem={({ item }) => _renderItem(item)}
         onEndReached={onEndReached}
         onEndReachedThreshold={1}
       />

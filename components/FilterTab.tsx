@@ -1,16 +1,8 @@
-import { View, Text, TouchableOpacity, StyleSheet, useWindowDimensions } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native'
 import React from 'react'
+import { FilterTabProps } from '../interfaces/FilterTabProps'
 
-interface FilterTabProps {
-  filterData: {
-    key: string,
-    title: string,
-    MyFunction: () => void
-  }[]
-  filterBy: string
-}
 const FilterTab: React.FC<FilterTabProps> = ({ filterData, filterBy }) => {
-  const layout = useWindowDimensions()
   return (
     <View style={styles.container}>
       {
@@ -31,8 +23,7 @@ const FilterTab: React.FC<FilterTabProps> = ({ filterData, filterBy }) => {
               <Text style={{ color: filterBy === key ? "#000" : "#c4c4c4", fontWeight: "700" }}>{title}</Text>
             </TouchableOpacity>
           )
-        }
-        )
+        })
       }
     </View>
   )

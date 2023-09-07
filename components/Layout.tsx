@@ -2,12 +2,9 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
+import { LayoutProps } from "../interfaces/LayoutProps";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout = ({ children }: LayoutProps) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const insets = useSafeAreaInsets();
 
   return (
@@ -15,7 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
       style={[
         styles.container,
         {
-          paddingBottom: insets.bottom,
+          marginBottom: insets.bottom,
         }
       ]}
     >
@@ -24,6 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
     </View>
   );
 };
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -3,10 +3,7 @@ import CryptoList from "../components/CryptoList";
 import { useTickersQuery } from "../hooks/queries/useTickersQuery";
 import Search from "../components/Search";
 import FilterTab from "../components/FilterTab";
-
-interface CryptoScreenProps {
-  navigation: any;
-}
+import { CryptoScreenProps } from "../interfaces/CryptoScreenProps";
 
 const CryptoScreen: React.FC<CryptoScreenProps> = ({ navigation }) => {
   const [start, setStart] = useState<number>(0);

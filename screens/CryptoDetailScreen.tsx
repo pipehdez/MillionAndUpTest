@@ -1,20 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
-import { RootStackParamList } from "../types/navigation"; // Asegúrate de importar tus tipos de navegación
-import { RouteProp } from "@react-navigation/native";
+ // Asegúrate de importar tus tipos de navegación
+
 import { formatPrice } from "../utils/formatPrice";
 import CryptoStats from "../components/CryptoStats";
 import { AntDesign } from "@expo/vector-icons";
 import CryptoCard from "../components/CryptoCard";
-
-type CryptoDetailScreenRouteProp = RouteProp<
-  RootStackParamList,
-  "CryptoDetail"
->;
-
-interface CryptoDetailProps {
-  route: CryptoDetailScreenRouteProp | any;
-}
+import { CryptoDetailProps } from "../interfaces/CryptoDetailProps";
 
 const CryptoDetailScreen: React.FC<CryptoDetailProps> = ({ route }) => {
   const { crypto } = route.params;

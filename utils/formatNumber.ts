@@ -16,5 +16,5 @@ export const formatNumber = (price: string) => {
         })
 
     return `${formatter}M`
-  };
+};
   

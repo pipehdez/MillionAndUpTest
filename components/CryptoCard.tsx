@@ -1,14 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Crypto } from '../types/crypto';
 import PercentageDisplay from "../components/PercentageDisplay";
-//import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { formatPrice } from '../utils/formatPrice';
 import { formatNumber } from '../utils/formatNumber';
-
-interface CryptoCardProps {
-    data: Crypto | undefined;
-}
+import { CryptoCardProps } from '../interfaces/CryptoCardProps';
 
 const CryptoCard: React.FC<CryptoCardProps> = ({ data }) => {
     const {

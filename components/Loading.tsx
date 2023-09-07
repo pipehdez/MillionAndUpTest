@@ -9,8 +9,6 @@ const Loading: React.FC = () => {
   );
 };
 
-export default Loading;
-
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
@@ -18,3 +16,5 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 });
+
+export default Loading;
