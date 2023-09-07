@@ -4,6 +4,12 @@ import { formatPrice } from "../utils/formatPrice";
 import PercentageDisplay from "./PercentageDisplay";
 import { ItemProps } from '../interfaces/ItemProps';
 
+/**
+ * Renders a single item component.
+ * @param {ItemProps} props - The props object containing the item to be rendered.
+ * @param {Item} props.item - The item to be rendered.
+ * @returns {JSX.Element} - The JSX element representing the item component.
+ */
 const Item: React.FC<ItemProps> = ({ item }) => {
   const { name, symbol, price_usd, percent_change_1h } = item
   return (

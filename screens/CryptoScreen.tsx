@@ -5,6 +5,11 @@ import Search from "../components/Search";
 import FilterTab from "../components/FilterTab";
 import { CryptoScreenProps } from "../interfaces/CryptoScreenProps";
 
+/**
+ * CryptoScreen component displays a list of cryptocurrencies with filtering and search functionality.
+ * @param navigation - Navigation prop for React Navigation.
+ * @returns A React component.
+ */
 const CryptoScreen: React.FC<CryptoScreenProps> = ({ navigation }) => {
   const [start, setStart] = useState<number>(0);
   const [limit, setLimit] = useState<number>(10);
@@ -20,14 +25,24 @@ const CryptoScreen: React.FC<CryptoScreenProps> = ({ navigation }) => {
     refetch();
   }, [start, limit]);
 
+  /**
+   * Increases the limit state by 10 to load more data.
+   */
   const handleLoadMore = () => {
     setLimit((prevLimit) => prevLimit + 10);
   };
 
+  /**
+   * Sets the filterBy state to the selected filter.
+   * @param filter - The selected filter.
+   */
   const handleFilterChange = (filter: "volume24" | "market_cap_usd" | "price_usd") => {
     setFilterBy(filter);
   };
 
+  /**
+   * Filters and sorts the data based on the search term and selected filter.
+   */
   const filteredData = data
     ? data
       .filter((crypto) =>
@@ -48,23 +63,26 @@ const CryptoScreen: React.FC<CryptoScreenProps> = ({ navigation }) => {
       })
     : [];
 
-    const filterTab = [
-      {
-        key: 'volume24',
-        title: 'Hot',
-        MyFunction: () => handleFilterChange("volume24"),
-      },
-      {
-        key: 'market_cap_usd',
-        title: 'Market Capitalization',
-        MyFunction: () => handleFilterChange("market_cap_usd"),
-      },
-      {
-        key: 'price_usd',
-        title: 'Price USD',
-        MyFunction: () => handleFilterChange("price_usd"),
-      },
-    ]
+  /**
+   * An array of objects that represent each filter tab.
+   */
+  const filterTab = [
+    {
+      key: 'volume24',
+      title: 'Hot',
+      MyFunction: () => handleFilterChange("volume24"),
+    },
+    {
+      key: 'market_cap_usd',
+      title: 'Market Capitalization',
+      MyFunction: () => handleFilterChange("market_cap_usd"),
+    },
+    {
+      key: 'price_usd',
+      title: 'Price USD',
+      MyFunction: () => handleFilterChange("price_usd"),
+    },
+  ]
 
   return (
     <>

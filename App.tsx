@@ -1,3 +1,8 @@
+/**
+ * The main component of the MillionAndUpTest app.
+ * It provides the QueryClient, SafeAreaProvider, NavigationContainer and Layout components.
+ * @returns The rendered app.
+ */
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import Layout from "./components/Layout";

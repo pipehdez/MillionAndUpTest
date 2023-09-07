@@ -1,3 +1,9 @@
+/**
+ * A component that displays a set of filter tabs.
+ * @param filterData An array of objects containing the filter data.
+ * @param filterBy The currently selected filter.
+ * @returns A React component that displays the filter tabs.
+ */
 import { View, Text, TouchableOpacity, StyleSheet, } from 'react-native'
 import React from 'react'
 import { FilterTabProps } from '../interfaces/FilterTabProps'

@@ -3,10 +3,16 @@ import { LineChart } from "react-native-chart-kit";
 import { Dimensions, StyleSheet, View } from "react-native";
 import { CryptoStatsProps } from "../interfaces/CryptoStatsProps";
 
+/**
+ * Renders a line chart displaying the percentage change of a cryptocurrency in the last hour, 24 hours and 7 days.
+ * @param {Object} props - The component props.
+ * @param {Object} props.data - The data object containing the percentage change values for 1 hour, 24 hours and 7 days.
+ * @returns {JSX.Element} - The CryptoStats component.
+ */
+
 const CryptoStats: React.FC<CryptoStatsProps> = ({ data }) => {
   const { percent_change_1h, percent_change_24h, percent_change_7d } = data;
 
-  // Datos para la gráfica de líneas
   const chartData = {
     labels: ["1h", "24h", "7d"],
     datasets: [

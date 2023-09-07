@@ -2,6 +2,13 @@ import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { SearchProps } from "../interfaces/SearchProps";
 
+/**
+ * Renders a search component with a text input to search for cryptos.
+ * @param {Object} props - The component props.
+ * @param {string} props.searchTerm - The current search term.
+ * @param {function} props.setSearchTerm - The function to update the search term.
+ * @returns {JSX.Element} - The rendered component.
+ */
 const Search: React.FC<SearchProps> = ({ searchTerm, setSearchTerm }) => {
   return (
     <View style={styles.container}>

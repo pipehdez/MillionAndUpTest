@@ -1,9 +1,32 @@
+/**
+ * A card component that displays information about a cryptocurrency.
+ * @param {CryptoCardProps} data - The data of the cryptocurrency to display.
+ * @returns {JSX.Element} - A React component that displays the cryptocurrency information.
+ */
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import PercentageDisplay from "../components/PercentageDisplay";
 import { formatPrice } from '../utils/formatPrice';
 import { formatNumber } from '../utils/formatNumber';
 import { CryptoCardProps } from '../interfaces/CryptoCardProps';
+
+/**
+ * CryptoCard component displays information about a cryptocurrency.
+ * @param {Object} data - Object containing cryptocurrency data.
+ * @param {string} data.name - Name of the cryptocurrency.
+ * @param {string} data.symbol - Symbol of the cryptocurrency.
+ * @param {number} data.percent_change_1h - Percentage change in the last hour.
+ * @param {number} data.percent_change_24h - Percentage change in the last 24 hours.
+ * @param {number} data.percent_change_7d - Percentage change in the last 7 days.
+ * @param {number} data.market_cap_usd - Market capitalization in USD.
+ * @param {number} data.volume24 - Trading volume in the last 24 hours.
+ * @param {number} data.price_btc - Price in BTC.
+ * @param {number} data.rank - Rank of the cryptocurrency.
+ * @param {number} data.csupply - Circulating supply of the cryptocurrency.
+ * @param {number} data.msupply - Maximum supply of the cryptocurrency.
+ * @param {number} data.tsupply - Total supply of the cryptocurrency.
+ * @returns {JSX.Element} - Returns a React component.
+ */
 
 const CryptoCard: React.FC<CryptoCardProps> = ({ data }) => {
     const {

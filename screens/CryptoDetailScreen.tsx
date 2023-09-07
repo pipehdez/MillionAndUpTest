@@ -1,6 +1,10 @@
+/**
+ * CryptoDetailScreen component displays detailed information about a cryptocurrency.
+ * @param {CryptoDetailProps} route - The route object containing the crypto object.
+ * @returns {JSX.Element} - A scrollable view containing the crypto's name, symbol, price, stats, and a card with additional information.
+ */
 import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
- // Asegúrate de importar tus tipos de navegación
 
 import { formatPrice } from "../utils/formatPrice";
 import CryptoStats from "../components/CryptoStats";

@@ -12,10 +12,15 @@ export type RootStackParamList = {
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
+/**
+ * Renders the navigation stack for the app.
+ * @returns A React functional component.
+ */
+
 const Navigation: React.FC = () => {
   return (
     <Stack.Navigator initialRouteName="CryptoScreen">
-      <Stack.Screen name="CryptoScreen" component={CryptoScreen} options={{title: "Cryptos"}} />
+      <Stack.Screen name="CryptoScreen" component={CryptoScreen} options={{ title: "Cryptos" }} />
       <Stack.Screen
         name="CryptoDetail"
         component={CryptoDetailScreen}
