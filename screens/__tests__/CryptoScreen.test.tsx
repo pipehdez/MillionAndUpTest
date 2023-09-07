@@ -70,15 +70,22 @@ describe("CryptoScreen", () => {
     );
 
     await waitFor(() => {
-      expect(getByText("Bitcoin")).toBeTruthy(); // Reemplaza con el texto correcto de tu CryptoList
+      expect(getByText("Bitcoin")).toBeTruthy(); 
       // Realiza más expectativas según sea necesario
     });
 
     // Simular interacción de búsqueda
-    const searchInput = getByTestId("search-input"); // Asegúrate de agregar un testID en tu componente Search
-    fireEvent.changeText(searchInput, "Bitcoin"); // Cambia el texto de búsqueda
-    await waitFor(() => {
-      // Realiza expectativas basadas en la respuesta de búsqueda
-    });
+    const searchInput = getByTestId("search-input"); 
+    fireEvent.changeText(searchInput, "Bitcoin"); 
+
+    // Simular interacción de filtro
+    const filterButtonHot = getByText("Hot");
+    const filterButtonMC = getByText("Market Capitalization");
+    const filterButtonPUSD = getByText("Price USD");
+
+    fireEvent.press(filterButtonHot); // Presiona el botón de filtro Hot
+    fireEvent.press(filterButtonMC); // Presiona el botón de filtro Market Capitalization
+    fireEvent.press(filterButtonPUSD); // Presiona el botón de filtro Price USD
+
   });
 });

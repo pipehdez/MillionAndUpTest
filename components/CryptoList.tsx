@@ -3,7 +3,6 @@ import {
   View,
   Text,
   FlatList,
-  ActivityIndicator,
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
@@ -19,7 +18,6 @@ interface CryptoListProps {
   error: string | unknown;
   onEndReached: () => void;
   navigation: any;
-  isRefetching: boolean;
 }
 const CryptoList: React.FC<CryptoListProps> = ({
   data,
@@ -28,7 +26,6 @@ const CryptoList: React.FC<CryptoListProps> = ({
   error,
   onEndReached,
   navigation,
-  isRefetching,
 }) => {
   if (isLoading) {
     return <Loading />;
@@ -83,11 +80,6 @@ const CryptoList: React.FC<CryptoListProps> = ({
         renderItem={({ item }) => renderItem(item)}
         onEndReached={onEndReached}
         onEndReachedThreshold={1}
-        ListFooterComponent={() =>
-          isRefetching ? (
-            <ActivityIndicator size="large" color="#00ff00" />
-          ) : null
-        }
       />
     </View>
   );

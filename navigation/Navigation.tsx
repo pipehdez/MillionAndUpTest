@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const Navigation: React.FC = () => {
   return (
     <Stack.Navigator initialRouteName="CryptoScreen">
-      <Stack.Screen name="CryptoScreen" component={CryptoScreen} />
+      <Stack.Screen name="CryptoScreen" component={CryptoScreen} options={{title: "Cryptos"}} />
       <Stack.Screen
         name="CryptoDetail"
         component={CryptoDetailScreen}

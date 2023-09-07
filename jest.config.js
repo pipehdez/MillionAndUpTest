@@ -5,4 +5,5 @@ module.exports = {
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
   testMatch: ['**/__tests__/**/*.test.[jt]s?(x)'],
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
 };

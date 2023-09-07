@@ -1,7 +1,7 @@
 import React from "react";
 import { LineChart } from "react-native-chart-kit";
 import { Crypto } from "../types/crypto";
-import { Dimensions, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 
 interface CryptoStatsProps {
   data: {
@@ -44,6 +44,7 @@ const CryptoStats: React.FC<CryptoStatsProps> = ({ data }) => {
   };
 
   return (
+    <View style={styles.container}>
     <LineChart
       data={chartData}
       width={Dimensions.get("window").width * 0.9}
@@ -55,7 +56,27 @@ const CryptoStats: React.FC<CryptoStatsProps> = ({ data }) => {
         borderRadius: 16,
       }}
     />
+    </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#e0e0e0",
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    marginHorizontal: 10,
+    marginVertical: 5,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 1.5,
+  },
+});
 
 export default CryptoStats;

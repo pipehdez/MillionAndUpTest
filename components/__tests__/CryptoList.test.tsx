@@ -47,13 +47,13 @@ describe("CryptoList", () => {
   it("debería renderizar correctamente y mostrar datos", () => {
     const { getByText, getAllByTestId } = render(
       <CryptoList
+        //@ts-ignore
         data={mockCryptoData}
         isLoading={false}
         isError={false}
         error={null}
         onEndReached={() => { }}
         navigation={{ navigate: jest.fn() }}
-        isRefetching={false}
       />
     );
 
@@ -84,6 +84,7 @@ describe("CryptoList", () => {
     const navigate = jest.fn();
     const { getByText } = render(
       <CryptoList
+        //@ts-ignore
         data={mockCryptoData}
         isLoading={false}
         isError={false}
