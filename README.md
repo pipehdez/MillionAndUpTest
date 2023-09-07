@@ -28,6 +28,12 @@ npx expo start
 › Press a │ open Android
 › Press i │ open iOS simulator
 ```
+## Pruebas unitarias
+
+### 1. Ejecutar pruebas unitarias
+```
+npm run test or yarn test
+```
 
 ## Capturas de pantalla de la aplicación en ejecución en IOS
 
@@ -43,11 +49,4 @@ npx expo start
 ![Pantalla de inicio Android](/assets/screenshots/android-homescreen.png)
 
 ### 2. Pantalla de detalles Android
-![Pantalla de detalles Android](/assets/screenshots/Android-detailscreen.png)
-
-## Pruebas unitarias
-
-### 1. Ejecutar pruebas unitarias
-```
-npm run test or yarn test
-```
+![Pantalla de detalles Android](/assets/screenshots/android-detailscreen.png)
